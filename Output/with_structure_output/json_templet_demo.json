@@ -1,0 +1,10 @@
+{
+    "title":"Review",
+    "discription":"schema about students",
+    "type":"Object",
+    "properties":{
+        "name":"string",
+        "age":"integer"
+    },
+    "required":["name"]
+}
