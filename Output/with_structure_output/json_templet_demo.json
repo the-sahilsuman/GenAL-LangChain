@@ -4,7 +4,8 @@
     "type":"Object",
     "properties":{
         "name":"string",
-        "age":"integer"
+        "age":"integer",
+        "mobile":"string"
     },
     "required":["name"]
 }
