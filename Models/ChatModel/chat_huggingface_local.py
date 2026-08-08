@@ -5,7 +5,7 @@ import os
 load_dotenv()
 
 llm=HuggingFacePipeline.from_model_id(
-    model_id=os.getenv("HUGGINGFACE_MODEL_REPO"),
+    repo_id=os.getenv("HUGGINGFACE_MODEL_REPO"),
     task="text-generation",
     pipeline_kwargs=dict(
         temperature=0.5,
