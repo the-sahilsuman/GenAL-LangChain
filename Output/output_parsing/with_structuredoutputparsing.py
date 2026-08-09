@@ -1,12 +1,20 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import JsonOutputParser
+from langchain.output_parsers import StructuredOutputParser, ResponseSchema
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
 
-parser = JsonOutputParser()
+schema=[
+    ResponseSchema(name="fact1"),
+    ResponseSchema(name="fact2"),
+    ResponseSchema(name="fact3"),
+    ResponseSchema(name="fact4"),
+    ResponseSchema(name="fact5")
+]
+
+parser = StructuredOutputParser.from_response_schema(schema)
 
 template = PromptTemplate(
     template="Give the 5 line about {topic}. \n {format_instruction}",
