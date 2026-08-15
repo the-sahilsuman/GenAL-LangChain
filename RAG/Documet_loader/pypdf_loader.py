@@ -10,7 +10,7 @@ load_dotenv()
 parser=StrOutputParser()
 
 prompt=PromptTemplate(
-    template="write a short note of this {doc}",
+    template="write a 5 line short note of this {doc}",
     input_variables=["doc"]
 )
 
@@ -35,4 +35,4 @@ chain= prompt | model | parser
 print(doc)
 print(type(doc))
 print(len(doc))
-# print(doc[0])
+print(doc[0].page_content)
